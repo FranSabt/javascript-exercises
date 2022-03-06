@@ -1,6 +1,8 @@
 const sumAll = function(a, b) {
     let result = 0;
-    if (a < 0 || b == isNaN){
+    if (a < 0 || typeof(b) !== 'number'){ // is NaN was useless because if the 
+                                          // varible is a string
+                                          // of numbers, it parse to number.
         return 'ERROR'
     }
     else {
@@ -10,8 +12,7 @@ const sumAll = function(a, b) {
         for (let i = a; i <= b; i++){
             result = result + i; 
         }
-        console.log(result)
-        console.log(a + "  " + b);
+        console.log(isNaN(b));
         return result;
     }
 };
